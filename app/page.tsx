@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { checkIfObjectInstanceOfClass } from "./utils";
 
 export default function Home() {
+  const checkIfInstanceOfClass = checkIfObjectInstanceOfClass(new Date(), Date);
+  console.log("Result from, checkIfInstanceOfClass", checkIfInstanceOfClass);
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -18,6 +22,10 @@ export default function Home() {
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             I'll display examples and results on this screen.
+          </p>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Result for checkIfInstanceOfClass new Date and Date is{" "}
+            {checkIfInstanceOfClass === true ? "true" : "false"}.
           </p>
         </div>
       </main>
