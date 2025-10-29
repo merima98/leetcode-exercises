@@ -37,3 +37,7 @@ export function checkIfObjectInstanceOfClass(object: any, classFuntion: any): bo
         return false
     }
 }
+
+
+
+

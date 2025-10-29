@@ -1,9 +1,14 @@
+import "@/app/lib/arrayExtensions";
+
 import Image from "next/image";
 import { checkIfObjectInstanceOfClass } from "./utils";
 
 export default function Home() {
   const checkIfInstanceOfClass = checkIfObjectInstanceOfClass(new Date(), Date);
   console.log("Result from, checkIfInstanceOfClass", checkIfInstanceOfClass);
+
+  const array = [1, 2, 3];
+  console.log("Array last element is: ", array.last());
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
