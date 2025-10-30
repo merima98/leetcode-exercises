@@ -1,7 +1,9 @@
+"use client";
+
 import "@/app/lib/arrayExtensions";
 
 import Image from "next/image";
-import { checkIfObjectInstanceOfClass } from "./utils";
+import { checkIfObjectInstanceOfClass, sleep } from "./utils";
 
 export default function Home() {
   const checkIfInstanceOfClass = checkIfObjectInstanceOfClass(new Date(), Date);
@@ -9,6 +11,10 @@ export default function Home() {
 
   const array = [1, 2, 3];
   console.log("Array last element is: ", array.last());
+
+  const handleClick = () => {
+    sleep(1000).then(() => console.log("Sleep function executed."));
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -33,6 +39,10 @@ export default function Home() {
             {checkIfInstanceOfClass === true ? "true" : "false"}.
           </p>
         </div>
+
+        <button onClick={handleClick}>
+          Click me if you want to test sleep function
+        </button>
       </main>
     </div>
   );
